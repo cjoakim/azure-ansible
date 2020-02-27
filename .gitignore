@@ -1,9 +1,9 @@
 # cj
 
-bin/
-include/
-lib/
-man/
+**/bin/
+**/include/
+**/lib/
+**/man/
 **/tmp/
 
 

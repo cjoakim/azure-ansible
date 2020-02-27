@@ -1,5 +1,5 @@
 # ansible-playbook git-setup.yml
-# Chris Joakim, Microsoft, 2019/05/09
+# Chris Joakim, Microsoft, 2020/02/27
 
 ---
 - hosts: dsvm-all
