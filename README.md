@@ -2,6 +2,17 @@
 
 Examples of the Python Ansible library with Azure VMs
 
+## Ansible Links
+
+- https://docs.microsoft.com/en-us/azure/ansible/
+- https://www.ansible.com
+- https://docs.ansible.com 
+- https://www.ansible.com/integrations/infrastructure/windows
+- https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html
+- https://pypi.org/project/ansible/
+
+---
+
 ## Setup 
 
 Instructions for macOS and Linux, Windows PowerShell is similar:
@@ -47,4 +58,27 @@ ssh_args = -o ControlMaster=auto -o ControlPersist=120s -A
 
 ```
 $ ansible dsvmall -m ping -i hosts
-``
+```
+
+---
+
+## Example Use
+
+```
+$ ansible-playbook git-setup.yml
+```
+
+Same command with verbose debug information:
+```
+$ export ANSIBLE_DEBUG=1 ; ansible-playbook git-setup.yml
+```
+
+Pull the latest code to a git repository:
+```
+$ ansible-playbook git-pull.yml
+```
+
+Install the DotNet Core 3.1 SDK on the Ubuntu VM:
+```
+$ ansible-playbook apt-install-dotnet-core.yml
+```

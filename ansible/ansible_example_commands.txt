@@ -1,6 +1,0 @@
-
-ansible-playbook git-setup.yml
-
-ansible-playbook git-pull.yml
-
-ansible-playbook build-docker.yml

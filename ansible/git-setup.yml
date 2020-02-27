@@ -1,4 +1,4 @@
-# ansible-playbook -i hosts git-setup.yml
+# ansible-playbook git-setup.yml
 # Chris Joakim, Microsoft, 2020/02/27
 
 ---
@@ -17,3 +17,8 @@
       name: user.email
       scope: global
       value: 'christopher.joakim@gmail.com'
+
+  - name: git config list global
+    git_config:
+      list_all: yes
+      scope: global

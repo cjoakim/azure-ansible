@@ -1,8 +1,8 @@
 # ansible-playbook git-pull.yml
-# Chris Joakim, Microsoft, 2019/05/09
+# Chris Joakim, Microsoft, 2020/02/27
 
 ---
-- hosts: dsvm-all
+- hosts: dsvmall
   remote_user: cjoakim
 
   tasks:
@@ -10,9 +10,9 @@
   - name: git reset --hard
     shell: /usr/bin/git reset --hard
     args:
-      chdir: /home/cjoakim/github/azure-dsvm-py-ansible
+      chdir: /home/cjoakim/github/azure-dsvm-private
 
   - name: git pull
     shell: /usr/bin/git pull
     args:
-      chdir: /home/cjoakim/github/azure-dsvm-py-ansible
+      chdir: /home/cjoakim/github/azure-dsvm-private

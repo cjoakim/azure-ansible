@@ -1,9 +1,8 @@
 # ansible-playbook apt-installs.yml
-# dsvm-all dsvm-use dsvm-weu dsvm-cin dsvm-jpe
 # Chris Joakim, Microsoft, 2018/06/10
 
 ---
-- hosts: dsvm-all
+- hosts: dsvmall
   remote_user: cjoakim
 
   tasks:
@@ -11,5 +10,5 @@
   - name: apt install daemon
     shell: sudo /usr/bin/apt install daemon
     args:
-      chdir: /home/cjoakim/github/azure-around-the-world
+      chdir: /home/cjoakim/
   
