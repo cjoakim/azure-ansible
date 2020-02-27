@@ -1,0 +1,19 @@
+# ansible-playbook git-setup.yml
+# Chris Joakim, Microsoft, 2019/05/09
+
+---
+- hosts: dsvm-all
+  remote_user: cjoakim
+
+  tasks:
+  - name: git config user.name
+    git_config:
+      name: user.name
+      scope: global
+      value: 'Chris Joakim'
+
+  - name: git config user.email
+    git_config:
+      name: user.email
+      scope: global
+      value: 'christopher.joakim@gmail.com'

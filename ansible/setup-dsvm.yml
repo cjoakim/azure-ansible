@@ -1,0 +1,31 @@
+# ansible-playbook setup-dsvm.yml
+# dsvm-all dsvm-use dsvm-weu dsvm-cin dsvm-jpe
+# Chris Joakim, Microsoft, 2018/06/10
+
+---
+- hosts: dsvm-all
+  remote_user: cjoakim
+
+  tasks:
+  - name: git config user.name
+    git_config:
+      name: user.name
+      scope: global
+      value: 'Chris Joakim'
+
+  - name: git config user.email
+    git_config:
+      name: user.email
+      scope: global
+      value: 'christopher.joakim@gmail.com'
+
+  - name: create github directory
+    file: path=/home/cjoakim/github state=directory
+
+  - name: delete github azure-around-the-world directory
+    file: path=/home/cjoakim/github/azure-around-the-world state=absent
+
+  - name: git clone app
+    shell: /usr/bin/git clone git@github.com:cjoakim/azure-around-the-world.git
+    args:
+      chdir: /home/cjoakim/github/
