@@ -13,7 +13,7 @@ Examples of the Python Ansible library with Azure VMs
 
 ---
 
-## Setup 
+## Setup for this example repo
 
 Instructions for macOS and Linux, Windows PowerShell is similar:
 Assumes Python 3.7+ is present.
@@ -64,6 +64,7 @@ $ ansible dsvmall -m ping -i hosts
 
 ## Example Use
 
+Remotely configure the git user on the remote VMs:
 ```
 $ ansible-playbook git-setup.yml
 ```
