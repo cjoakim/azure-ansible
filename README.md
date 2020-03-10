@@ -30,6 +30,23 @@ $ ansible --version
 ansible 2.9.5
 ```
 
+### Create your Data Science Virtual Machines (DSVMs)
+
+```
+$ cd az_cli/
+$ ./gen_ssh_key.sh   (optional, you can use your current id_rsa key)
+$ ./dsvm1.sh create ; ./dsvm2.sh create ; ./dsvm3.sh create
+```
+
+See the **tmp/dsvm<n>_vm_create.json** files to obtain the IP Address of each DSVM.
+
+### ssh into your DSVMs to test connectivity
+
+```
+$ ssh -A <your-user-id>@<your-dsvm-ip>
+$ ssh -A chris@1.2.3.4
+```
+
 ### Edit Your **hosts** file in the current directory
 
 ```
