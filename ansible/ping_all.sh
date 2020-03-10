@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Chris Joakim, Microsoft, 2018/06/10
+# Execute an Ansible ping of the 'dsvmall' group of VMs.
+# Chris Joakim, Microsoft, 2020/03/10
 
-ansible dsvm-all -m ping
-
+ansible dsvmall -m ping
