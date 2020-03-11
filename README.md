@@ -49,21 +49,34 @@ $ ssh -A <your-user-id>@<your-dsvm-ip>
 $ ssh -A chris@1.2.3.4
 ```
 
-### Edit Your **hosts** file in the current directory
+Note: be sure your current shell is using your **id_rsa key**; add it as follows:
+```
+$ cd ~/.ssh ; ssh-add id_rsa
+```
+
+### Edit Your Ansible **hosts** file to have your VM IP addresses
 
 ```
-[dsvmall]
-40.121.95.166
-13.73.17.143
-
 [dsvmeastus]
-40.121.95.166
+137.135.93.34
+
+[dsvmwestus]
+40.78.56.214
 
 [dsvmjapaneast]
-13.73.17.143
+52.185.174.78
+
+[dsvmus]
+137.135.93.34
+40.78.56.214
+
+[dsvmall]
+137.135.93.34
+40.78.56.214
+52.185.174.78
 ```
 
-### Edit Your **ansible.cfg** file in the current directory
+### Edit Your **ansible.cfg** file
 
 ```
 [defaults]
@@ -74,37 +87,48 @@ remote_user = cjoakim
 ssh_args = -o ControlMaster=auto -o ControlPersist=120s -A
 ```
 
-### Ping your hosts via ssh
+### Ping your hosts with Ansible via ssh
 
 ```
 $ ansible dsvmall -m ping
+
+...
+
+52.185.174.78 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
 ```
 
 ---
 
 ## Example Use
 
-Remotely configure the git user and a github repo on the remote VMs:
+### Remotely configure the git user and clone a github repo to the remote VMs
+
 ```
 $ ansible-playbook git-setup.yml
 ```
 
-Get the latest version of a git repo:
+### Pull the latest version of a git repo
+
 ```
 $ ansible-playbook git-pull.yml
 ```
 
-
 Same command with verbose debug information:
 ```
-$ export ANSIBLE_DEBUG=1 ; ansible-playbook git-setup.yml
+$ export ANSIBLE_DEBUG=1 ; ansible-playbook git-pull.yml
 ```
 
+### Install the DotNet Core 3.1 SDK on the Ubuntu VM
 
-Install the DotNet Core 3.1 SDK on the Ubuntu VM.
 This remotely executes a bash shell script on the VM.
 ```
 $ ansible-playbook install-dotnet-core.yml
 ```
 
-#### Version: 2020/03/11 11:52
+#### Version: 2020/03/11 12:01

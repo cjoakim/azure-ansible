@@ -1,5 +1,7 @@
 # cj
 
+.vscode/
+
 **/bin/
 **/include/
 **/lib/
