@@ -1,0 +1,13 @@
+# ansible-playbook install-dotnet-core.yml
+# Chris Joakim, Microsoft, 2020/03/11
+
+---
+- hosts: dsvmeastus
+  remote_user: cjoakim
+
+  tasks:
+
+  - name: execute the install_dotnet_core.sh script
+    shell: ./install_dotnet_core.sh
+    args:
+      chdir: /home/cjoakim/azure-ansible/vm/
