@@ -101,3 +101,5 @@ Install the DotNet Core 3.1 SDK on the Ubuntu VM:
 ```
 $ ansible-playbook apt-install-dotnet-core.yml
 ```
+
+#### Version: 2020/03/11 11:03

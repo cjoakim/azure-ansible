@@ -2,4 +2,5 @@ pip-tools
 
 ansible
 arrow
-azure
+
+# azure

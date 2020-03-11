@@ -1,5 +1,6 @@
 # ansible-playbook git-setup.yml
-# Chris Joakim, Microsoft, 2020/02/27
+# git config --list
+# Chris Joakim, Microsoft, 2020/03/11
 
 ---
 - hosts: dsvmall
@@ -22,3 +23,18 @@
     git_config:
       list_all: yes
       scope: global
+
+  - name: remove the azure-ansible repo if present
+    shell: rm -rf azure-ansible/
+    args:
+      chdir: /home/cjoakim/
+
+  - name: clone azure-ansible repo
+    shell: git clone https://github.com/cjoakim/azure-ansible.git
+    args:
+      chdir: /home/cjoakim/
+
+# - name: clone azure-xxxx-yyyy repo
+#   shell: git clone git@github.com:cjoakim/azure-xxxx-yyyy.git
+#   args:
+#     chdir: /home/cjoakim/
