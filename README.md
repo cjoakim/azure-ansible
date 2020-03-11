@@ -34,9 +34,11 @@ ansible 2.9.5
 
 ```
 $ cd az_cli/
-$ ./gen_ssh_key.sh   (optional, you can use your current **id_rsa key**)
+$ ./gen_ssh_key.sh     (optional, generates an id_rsa key)
 $ ./dsvm1.sh create ; ./dsvm2.sh create ; ./dsvm3.sh create
 ```
+
+The above uses your **id_rsa ssh key**.
 
 See the **tmp/dsvm<n>_vm_create.json** files to obtain the IP Address of each DSVM.
 
