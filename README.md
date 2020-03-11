@@ -34,7 +34,7 @@ ansible 2.9.5
 
 ```
 $ cd az_cli/
-$ ./gen_ssh_key.sh   (optional, you can use your current id_rsa key)
+$ ./gen_ssh_key.sh   (optional, you can use your current **id_rsa key**)
 $ ./dsvm1.sh create ; ./dsvm2.sh create ; ./dsvm3.sh create
 ```
 
@@ -75,31 +75,34 @@ ssh_args = -o ControlMaster=auto -o ControlPersist=120s -A
 ### Ping your hosts via ssh
 
 ```
-$ ansible dsvmall -m ping -i hosts
+$ ansible dsvmall -m ping
 ```
 
 ---
 
 ## Example Use
 
-Remotely configure the git user on the remote VMs:
+Remotely configure the git user and a github repo on the remote VMs:
 ```
 $ ansible-playbook git-setup.yml
 ```
+
+Get the latest version of a git repo:
+```
+$ ansible-playbook git-pull.yml
+```
+
 
 Same command with verbose debug information:
 ```
 $ export ANSIBLE_DEBUG=1 ; ansible-playbook git-setup.yml
 ```
 
-Pull the latest code to a git repository:
+
+Install the DotNet Core 3.1 SDK on the Ubuntu VM.
+This remotely executes a bash shell script on the VM.
 ```
-$ ansible-playbook git-pull.yml
+$ ansible-playbook install-dotnet-core.yml
 ```
 
-Install the DotNet Core 3.1 SDK on the Ubuntu VM:
-```
-$ ansible-playbook apt-install-dotnet-core.yml
-```
-
-#### Version: 2020/03/11 11:03
+#### Version: 2020/03/11 11:52

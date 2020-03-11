@@ -2,7 +2,7 @@
 # Chris Joakim, Microsoft, 2020/03/11
 
 ---
-- hosts: dsvmeastus
+- hosts: dsvmwestus
   remote_user: cjoakim
 
   tasks:
