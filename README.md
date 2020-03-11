@@ -131,4 +131,4 @@ This remotely executes a bash shell script on the VM.
 $ ansible-playbook install-dotnet-core.yml
 ```
 
-#### Version: 2020/03/11 12:01
+#### Version: 2020/03/11 12:12
