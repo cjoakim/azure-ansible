@@ -6,11 +6,20 @@ Examples of the Python Ansible library with Azure VMs
 
 - https://docs.microsoft.com/en-us/azure/ansible/
 - https://www.ansible.com
-- https://docs.ansible.com 
+- https://docs.ansible.com
+- https://pypi.org/project/ansible/ 
+
 - https://www.ansible.com/integrations/infrastructure/windows
 - https://docs.ansible.com/ansible/latest/modules/list_of_windows_modules.html
-- https://pypi.org/project/ansible/
+- https://docs.ansible.com/ansible/latest/modules/list_of_cloud_modules.html
 - https://www.azuredevopslabs.com/labs/vstsextend/ansible/
+- https://azure.microsoft.com/en-us/services/virtual-machines/data-science-virtual-machines/
+
+---
+
+## Diagram
+
+![overview](img/ansible-overview.png)
 
 ---
 
